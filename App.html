@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSG Panther - wA-Jugend</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0f172a; color: white; font-family: 'Segoe UI', sans-serif; -webkit-tap-highlight-color: transparent; }
+        .card { background: #1e293b; border-radius: 12px; padding: 15px; margin-bottom: 15px; border: 1px solid #334155; }
+        .btn-action { background: #3b82f6; color: white; padding: 12px; border-radius: 8px; text-align: center; font-weight: bold; display: block; width: 100%; margin-top: 10px; transition: background 0.3s; }
+        .btn-action:active { background: #2563eb; }
+        .team-photo-container { width: 100%; overflow: hidden; background: #1e293b; border-bottom: 1px solid #334155; }
+        .team-photo { width: 100%; height: auto; max-height: 250px; object-fit: cover; display: block; }
+    </style>
+</head>
+<body class="pb-10">
+
+    <header class="bg-slate-900 p-5 shadow-xl sticky top-0 z-10 border-b border-blue-900/50">
+        <h1 id="nav-title" class="text-xl font-bold text-blue-400 text-center">HSG Dudenhofen-Schifferstadt</h1>
+    </header>
+
+    <div class="team-photo-container">
+        <img src="https://hsg-panther.de/de/wp-content/uploads/2025/01/wB-1024x683.jpeg" alt="Mannschaftsfoto" class="team-photo">
+    </div>
+
+    <main class="p-4">
+        <p class="text-xs font-semibold mb-5 text-gray-500 uppercase text-center tracking-widest">Interner Bereich wA-Jugend</p>
+
+        <h2 class="text-sm font-semibold mb-2 text-gray-400 uppercase">Saison 2025/2026</h2>
+        <div class="card">
+            <h3 class="font-bold text-lg">Offizieller Spielplan</h3>
+            <p class="text-xs text-gray-400 mb-3">Tabelle, Ergebnisse & Anwurfzeiten.</p>
+            <a href="https://www.handball.net/..." target="_blank" class="btn-action">Spielplan öffnen</a>
+        </div>
+
+        <h2 class="text-sm font-semibold mb-2 text-gray-400 uppercase">Internes</h2>
+        <div class="card">
+            <h3 class="font-bold text-lg">Bilder & Videos</h3>
+            <p class="text-xs text-gray-400 mb-3">Passwortgeschützter Mannschaftsbereich.</p>
+            <button onclick="openMedia()" class="btn-action">Medienseite öffnen</button>
+        </div>
+
+        <div class="card">
+            <h3 class="font-bold text-lg">Live Stream</h3>
+            <p class="text-xs text-gray-400 mb-3">Falls verfügbar, hier klicken.</p>
+            <a href="https://www.twitch.tv/kaputzetv" target="_blank" class="btn-action">Zum Stream</a>
+        </div>
+    </main>
+
+    <script>
+        function openMedia() {
+            const pw = prompt("Mannschafts-Passwort eingeben:");
+            const secret = "Panther2025"; // ÄNDERE DIESES PASSWORT HIER
+            const url = "https://1drv.ms/f/c/562b67573af70c14/EpHjZulEZDdDlflnm1-SQigBRjUEUOmOYUbuUwp9XdmFvA?e=fS1rm2";
+
+            if (pw === secret) {
+                window.location.href = url;
+            } else if (pw !== null) {
+                alert("Falsches Passwort!");
+            }
+        }
+    </script>
+</body>
+</html>
